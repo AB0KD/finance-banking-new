@@ -108,9 +108,15 @@ function isValidShareLink(token) {
     if (!link) return false;
     
     const now = new Date().getTime();
-    if (now > link.expiry) return false;
+    if (now > link.expiry) {
+        deleteShareLink(token);
+        return false;
+    }
     
-    if (link.maxUses > 0 && link.usedCount >= link.maxUses) return false;
+    if (link.maxUses > 0 && link.usedCount >= link.maxUses) {
+        deleteShareLink(token);
+        return false;
+    }
     
     // زيادة عدد مرات الاستخدام
     link.usedCount++;
@@ -118,19 +124,4 @@ function isValidShareLink(token) {
     localStorage.setItem('shareLinks', JSON.stringify(updatedLinks));
     
     return true;
-}
-
-// دالة لتحميل المحتوى من رابط المشاركة
-function loadSharedContent(token) {
-    if (!isValidShareLink(token)) {
-        return false;
-    }
-    
-    // يمكنك هنا تحميل المحتوى الإضافي إذا لزم الأمر
-    return true;
-}
-
-// دالة لإنشاء رابط مشاركة مباشر
-function createDirectShareLink(token) {
-    return `${window.location.origin}${window.location.pathname.replace('dashboard.html', '')}share.html?token=${token}`;
 }

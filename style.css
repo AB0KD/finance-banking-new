@@ -31,13 +31,17 @@ body.light-mode header {
 
 body.light-mode .feature, 
 body.light-mode .file-item,
-body.light-mode .upload-form {
+body.light-mode .upload-form,
+body.light-mode .login-container,
+body.light-mode .item-card {
     background-color: white;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     border-radius: 10px;
 }
 
-body.light-mode .file-item button.download {
+body.light-mode .file-item button.download,
+body.light-mode .upload-btn,
+body.light-mode .login-btn {
     background: linear-gradient(135deg, #2c3e50, #3498db);
 }
 
@@ -58,13 +62,17 @@ body.dark-mode header {
 
 body.dark-mode .feature,
 body.dark-mode .file-item,
-body.dark-mode .upload-form {
+body.dark-mode .upload-form,
+body.dark-mode .login-container,
+body.dark-mode .item-card {
     background-color: #1e1e1e;
     box-shadow: 0 4px 15px rgba(255,255,255,0.05);
     border: 1px solid #2d2d2d;
 }
 
-body.dark-mode .file-item button.download {
+body.dark-mode .file-item button.download,
+body.dark-mode .upload-btn,
+body.dark-mode .login-btn {
     background: linear-gradient(135deg, #3498db, #2980b9);
 }
 
@@ -77,12 +85,8 @@ body.dark-mode footer {
     color: #e0e0e0;
 }
 
-body.dark-mode .login-container {
-    background-color: #1e1e1e;
-    border: 1px solid #2d2d2d;
-}
-
-body.dark-mode .form-group input {
+body.dark-mode .form-group input,
+body.dark-mode .form-group select {
     background-color: #2d2d2d;
     color: #e0e0e0;
     border: 1px solid #3d3d3d;
@@ -309,8 +313,12 @@ body.dark-mode .file-item p {
     font-size: 0.8rem;
 }
 
-.gallery-item .image-actions button.delete {
-    background-color: #e74c3c;
+.gallery-item .image-actions button.download {
+    background-color: #3498db;
+}
+
+.gallery-item .image-actions button.view {
+    background-color: #2ecc71;
 }
 
 /* أنماط التذييل */
@@ -338,7 +346,6 @@ footer {
     margin: 2rem auto;
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .login-container h2 {
@@ -368,7 +375,6 @@ footer {
 .login-btn {
     width: 100%;
     padding: 0.75rem;
-    background: linear-gradient(135deg, #2c3e50, #3498db);
     color: white;
     border: none;
     border-radius: 5px;
@@ -406,14 +412,7 @@ footer {
     border-radius: 5px;
 }
 
-body.dark-mode .upload-form input[type="file"] {
-    background-color: #2d2d2d;
-    color: #e0e0e0;
-    border: 1px solid #3d3d3d;
-}
-
 .upload-btn {
-    background: linear-gradient(135deg, #2c3e50, #3498db);
     color: white;
     border: none;
     padding: 0.75rem 1.5rem;
@@ -474,8 +473,36 @@ body.dark-mode .upload-form input[type="file"] {
     transform: scale(1.05);
 }
 
+.item-card button.download {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+}
+
+.item-card button.view {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+}
+
 .item-card button.delete {
     background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+/* أنماط خاصة بروابط المشاركة */
+.share-link-container {
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+}
+
+body.dark-mode .share-link-container {
+    background-color: #2d2d2d;
+}
+
+.share-link-container input {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
 /* التكيف مع الشاشات الصغيرة */
