@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>طلاب العلوم المالية والمصرفية - حل مشكلة اللغة</title>
+    <title>نظام حماية لوحة التحكم - طلاب العلوم المالية والمصرفية</title>
     <style>
         /* التنسيقات العامة */
         * {
@@ -18,6 +18,8 @@
             transition: all 0.3s ease;
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
         .container {
@@ -141,88 +143,25 @@
             color: white;
         }
 
-        /* أنماط الأقسام */
-        section {
-            padding: 3rem 0;
-        }
-
-        #hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 5rem 0;
-        }
-
-        #hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        #hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* أنماط الميزات */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .feature {
-            padding: 1.5rem;
-            border-radius: 10px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-
-        .feature:hover {
-            transform: translateY(-5px);
-        }
-
-        .feature h3 {
-            margin-bottom: 1rem;
-            color: #3498db;
-        }
-
-        /* أنماط التذييل */
-        footer {
-            background-color: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 2rem;
-        }
-
-        .footer-content {
+        /* أنماط صفحة تسجيل الدخول */
+        .login-section {
             display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .founder {
-            font-weight: bold;
-            color: #3498db;
-        }
-
-        /* أنماط لوحة التحكم */
-        .dashboard {
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
             padding: 2rem 0;
         }
 
-        .upload-form {
+        .login-container {
+            max-width: 400px;
+            width: 100%;
             padding: 2rem;
             border-radius: 10px;
-            margin-bottom: 2rem;
         }
 
-        .upload-form h3 {
-            margin-bottom: 1rem;
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
             color: #3498db;
         }
 
@@ -250,6 +189,45 @@
             border: 1px solid #3d3d3d;
         }
 
+        .btn-primary {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+            font-weight: 600;
+            width: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        /* أنماط لوحة التحكم */
+        .dashboard-section {
+            display: none;
+            padding: 2rem 0;
+        }
+
+        .dashboard {
+            padding: 2rem 0;
+        }
+
+        .upload-form {
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .upload-form h3 {
+            margin-bottom: 1rem;
+            color: #3498db;
+        }
+
         .upload-btn {
             background: linear-gradient(135deg, #2c3e50, #3498db);
             color: white;
@@ -267,23 +245,6 @@
         }
 
         /* أنماط أزرار محسنة */
-        .btn-primary {
-            background: linear-gradient(135deg, #3498db, #2980b9);
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 1rem;
-            font-weight: 600;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-        }
-
         .btn-success {
             background: linear-gradient(135deg, #2ecc71, #27ae60);
             color: white;
@@ -373,26 +334,24 @@
             color: #e0e0e0;
         }
 
-        /* تحسينات للشاشات الصغيرة */
-        @media (max-width: 768px) {
-            header .container {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            nav ul {
-                margin-top: 1rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .controls {
-                margin-top: 1rem;
-            }
-            
-            #hero h2 {
-                font-size: 2rem;
-            }
+        /* التذييل */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .founder {
+            font-weight: bold;
+            color: #3498db;
         }
 
         /* رسائل التنبيه */
@@ -400,6 +359,7 @@
             padding: 1rem;
             border-radius: 5px;
             margin-bottom: 1rem;
+            text-align: center;
         }
 
         .alert-success {
@@ -425,19 +385,34 @@
             color: #f8d7da;
             border: 1px solid #4d1519;
         }
+
+        /* تحسينات للشاشات الصغيرة */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .controls {
+                margin-top: 1rem;
+            }
+        }
     </style>
 </head>
 <body class="light-mode">
     <header>
         <div class="container">
-            <h1 data-key="siteTitle">طلاب العلوم المالية والمصرفية</h1>
+            <h1>طلاب العلوم المالية والمصرفية</h1>
             <nav>
                 <ul>
-                    <li><a href="#" data-key="home">الرئيسية</a></li>
-                    <li><a href="#about" data-key="about">نبذة عنا</a></li>
-                    <li><a href="#files" data-key="files">الملفات</a></li>
-                    <li><a href="#gallery" data-key="gallery">معرض الصور</a></li>
-                    <li><a href="#login" id="loginLink" data-key="login">تسجيل الدخول</a></li>
+                    <li><a href="#" id="homeLink">الرئيسية</a></li>
+                    <li><a href="#" id="logoutLink" style="display: none;">تسجيل الخروج</a></li>
                 </ul>
             </nav>
             <div class="controls">
@@ -451,139 +426,91 @@
     </header>
 
     <main>
-        <section id="hero">
-            <div class="container">
-                <h2 data-key="welcome">مرحباً بكم في منصة طلاب العلوم المالية والمصرفية</h2>
-                <p data-key="welcomeText">منصة متخصصة لتبادل المعرفة والموارد بين طلاب العلوم المالية والمصرفية</p>
-            </div>
-        </section>
-
-        <section id="about">
-            <div class="container">
-                <h2 data-key="aboutTitle">نبذة عن الموقع</h2>
-                <p data-key="aboutText">هذا الموقع مخصص لطلاب العلوم المالية والمصرفية، حيث يمكنهم مشاركة الملفات والصور المتعلقة بتخصصهم. يتميز الموقع بواجهة بسيطة وسهلة الاستخدام مع دعم للغتين العربية والإنجليزية وإمكانية التبديل بين الوضع الداكن والفاتح.</p>
-                
-                <div class="features">
-                    <div class="feature">
-                        <h3 data-key="feature1Title">رفع الملفات</h3>
-                        <p data-key="feature1Text">إمكانية رفع الملفات بمختلف الصيغ مع حماية بكلمة مرور.</p>
-                    </div>
-                    <div class="feature">
-                        <h3 data-key="feature2Title">معرض الصور</h3>
-                        <p data-key="feature2Text">مشاركة الصور المتعلقة بالعلوم المالية والمصرفية.</p>
-                    </div>
-                    <div class="feature">
-                        <h3 data-key="feature3Title">واجهة متعددة اللغات</h3>
-                        <p data-key="feature3Text">الدعم الكامل للغة العربية والإنجليزية.</p>
-                    </div>
-                    <div class="feature">
-                        <h3 data-key="feature4Title">وضع التصفح المظلم</h3>
-                        <p data-key="feature4Text">تجربة تصفح مريحة للعين في جميع الأوقات.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="files">
-            <div class="container">
-                <h2 data-key="availableFiles">الملفات المتاحة</h2>
-                <div class="file-list">
-                    <!-- سيتم ملؤها بواسطة JavaScript -->
-                </div>
-            </div>
-        </section>
-
-        <section id="gallery">
-            <div class="container">
-                <h2 data-key="galleryTitle">معرض الصور</h2>
-                <div class="gallery-grid">
-                    <!-- سيتم ملؤها بواسطة JavaScript -->
-                </div>
-            </div>
-        </section>
-
-        <section id="login">
+        <!-- قسم تسجيل الدخول -->
+        <section class="login-section" id="loginSection">
             <div class="container">
                 <div class="login-container">
-                    <h2 data-key="loginTitle">تسجيل الدخول</h2>
+                    <h2>تسجيل الدخول إلى لوحة التحكم</h2>
+                    <div id="loginMessage"></div>
                     <form id="loginForm">
                         <div class="form-group">
-                            <label for="username" data-key="username">اسم المستخدم</label>
+                            <label for="username">اسم المستخدم</label>
                             <input type="text" id="username" name="username" required>
                         </div>
                         <div class="form-group">
-                            <label for="password" data-key="password">كلمة المرور</label>
+                            <label for="password">كلمة المرور</label>
                             <input type="password" id="password" name="password" required>
                         </div>
-                        <button type="submit" class="btn-primary" data-key="loginButton">تسجيل الدخول</button>
+                        <button type="submit" class="btn-primary">تسجيل الدخول</button>
                     </form>
                 </div>
             </div>
         </section>
 
-        <section id="dashboard" style="display: none;">
+        <!-- قسم لوحة التحكم -->
+        <section class="dashboard-section" id="dashboardSection">
             <div class="container">
                 <div class="dashboard">
-                    <h2 data-key="dashboard">لوحة التحكم</h2>
-                    <p data-key="welcomeUser">مرحباً بك، ab0kd</p>
+                    <h2>لوحة التحكم</h2>
+                    <p>مرحباً بك، <strong>ab0kd</strong></p>
                     
                     <!-- قسم إنشاء روابط المشاركة -->
                     <div class="card">
-                        <h3 data-key="createLink">إنشاء رابط مشاركة</h3>
+                        <h3>إنشاء رابط مشاركة</h3>
                         <form id="shareForm">
                             <div class="form-group">
-                                <label for="shareExpiry" data-key="expiryDays">مدة الصلاحية (أيام)</label>
+                                <label for="shareExpiry">مدة الصلاحية (أيام)</label>
                                 <input type="number" id="shareExpiry" name="shareExpiry" min="1" max="30" value="7" required>
                             </div>
                             <div class="form-group">
-                                <label for="maxUses" data-key="maxViews">الحد الأقصى للمشاهدات (0 = غير محدود)</label>
+                                <label for="maxUses">الحد الأقصى للمشاهدات (0 = غير محدود)</label>
                                 <input type="number" id="maxUses" name="maxUses" min="0" value="10">
                             </div>
-                            <button type="submit" class="btn-success" data-key="createLinkBtn">إنشاء رابط</button>
+                            <button type="submit" class="btn-success">إنشاء رابط</button>
                         </form>
-                        <div id="shareLinkContainer" class="share-link-container" style="display: none; margin-top: 15px;">
+                        <div id="shareLinkContainer" style="display: none; margin-top: 15px;">
                             <p>رابط المشاركة:</p>
                             <input type="text" id="shareLink" readonly style="width: 100%; padding: 8px; margin: 5px 0;">
-                            <button id="copyLinkBtn" class="btn-success" data-key="copyLink">نسخ الرابط</button>
+                            <button id="copyLinkBtn" class="btn-success">نسخ الرابط</button>
                         </div>
                     </div>
                     
                     <!-- قسم رفع الملفات -->
                     <div class="card">
-                        <h3 data-key="uploadFile">رفع ملف جديد</h3>
+                        <h3>رفع ملف جديد</h3>
                         <div class="file-upload-container">
                             <div class="file-upload-icon">📁</div>
                             <p>اسحب الملف هنا أو انقر للاختيار</p>
                             <form id="uploadForm">
                                 <div class="form-group">
-                                    <label for="file" class="file-input-label" data-key="chooseFile">اختر الملف</label>
+                                    <label for="file" class="file-input-label">اختر الملف</label>
                                     <input type="file" id="file" name="file" style="display: none;" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="fileName" data-key="fileName">اسم الملف (اختياري)</label>
+                                    <label for="fileName">اسم الملف (اختياري)</label>
                                     <input type="text" id="fileName" name="fileName" placeholder="اسم الملف المعروض">
                                 </div>
-                                <button type="submit" class="btn-primary" data-key="uploadButton">رفع</button>
+                                <button type="submit" class="btn-primary">رفع</button>
                             </form>
                         </div>
                     </div>
                     
                     <!-- قسم رفع الصور -->
                     <div class="card">
-                        <h3 data-key="uploadImage">رفع صورة جديدة</h3>
+                        <h3>رفع صورة جديدة</h3>
                         <div class="file-upload-container">
                             <div class="file-upload-icon">🖼️</div>
                             <p>اسحب الصورة هنا أو انقر للاختيار</p>
                             <form id="imageUploadForm">
                                 <div class="form-group">
-                                    <label for="image" class="file-input-label" data-key="chooseImage">اختر الصورة</label>
+                                    <label for="image" class="file-input-label">اختر الصورة</label>
                                     <input type="file" id="image" name="image" accept="image/*" style="display: none;" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="imageName" data-key="imageName">اسم الصورة (اختياري)</label>
+                                    <label for="imageName">اسم الصورة (اختياري)</label>
                                     <input type="text" id="imageName" name="imageName" placeholder="اسم الصورة المعروضة">
                                 </div>
-                                <button type="submit" class="btn-primary" data-key="uploadButton">رفع</button>
+                                <button type="submit" class="btn-primary">رفع</button>
                             </form>
                         </div>
                     </div>
@@ -595,7 +522,7 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <p data-key="footerText">© 2023 موقع طلاب العلوم المالية والمصرفية. جميع الحقوق محفوظة.</p>
+                <p>© 2023 موقع طلاب العلوم المالية والمصرفية. جميع الحقوق محفوظة.</p>
                 <p>مؤسس الموقع: <span class="founder">عبدالله ضياء</span></p>
             </div>
         </div>
@@ -607,118 +534,52 @@
             ar: {
                 siteTitle: "طلاب العلوم المالية والمصرفية",
                 home: "الرئيسية",
-                about: "نبذة عنا",
-                files: "الملفات",
-                gallery: "معرض الصور",
                 login: "تسجيل الدخول",
-                dashboard: "لوحة التحكم",
                 logout: "تسجيل الخروج",
-                welcome: "مرحباً بكم في منصة طلاب العلوم المالية والمصرفية",
-                welcomeText: "منصة متخصصة لتبادل المعرفة والموارد بين طلاب العلوم المالية والمصرفية",
-                aboutTitle: "نبذة عن الموقع",
-                aboutText: "هذا الموقع مخصص لطلاب العلوم المالية والمصرفية، حيث يمكنهم مشاركة الملفات والصور المتعلقة بتخصصهم. يتميز الموقع بواجهة بسيطة وسهلة الاستخدام مع دعم للغتين العربية والإنجليزية وإمكانية التبديل بين الوضع الداكن والفاتح.",
-                feature1Title: "رفع الملفات",
-                feature1Text: "إمكانية رفع الملفات بمختلف الصيغ مع حماية بكلمة مرور.",
-                feature2Title: "معرض الصور",
-                feature2Text: "مشاركة الصور المتعلقة بالعلوم المالية والمصرفية.",
-                feature3Title: "واجهة متعددة اللغات",
-                feature3Text: "الدعم الكامل للغة العربية والإنجليزية.",
-                feature4Title: "وضع التصفح المظلم",
-                feature4Text: "تجربة تصفح مريحة للعين في جميع الأوقات.",
-                availableFiles: "الملفات المتاحة",
-                download: "تحميل",
-                galleryTitle: "معرض الصور",
-                footerText: "© 2023 موقع طلاب العلوم المالية والمصرفية. جميع الحقوق محفوظة.",
-                loginTitle: "تسجيل الدخول",
+                loginTitle: "تسجيل الدخول إلى لوحة التحكم",
                 username: "اسم المستخدم",
                 password: "كلمة المرور",
                 loginButton: "تسجيل الدخول",
-                uploadFile: "رفع ملف جديد",
-                uploadImage: "رفع صورة جديدة",
-                chooseFile: "اختر الملف",
-                chooseImage: "اختر الصورة",
-                uploadButton: "رفع",
+                dashboard: "لوحة التحكم",
                 welcomeUser: "مرحباً بك، عبدالله",
-                fileName: "اسم الملف",
-                imageName: "اسم الصورة",
-                delete: "حذف",
                 createLink: "إنشاء رابط مشاركة",
                 expiryDays: "مدة الصلاحية (أيام)",
                 maxViews: "الحد الأقصى للمشاهدات",
                 createLinkBtn: "إنشاء رابط",
                 copyLink: "نسخ الرابط",
-                activeLinks: "روابط المشاركة النشطة",
-                noActiveLinks: "لا توجد روابط مشاركة نشطة",
-                sharedContent: "محتوى مشترك معك",
-                availableContent: "المحتوى المتاح للتحميل",
-                noContent: "لا يوجد محتوى متاح للعرض حالياً",
-                goHome: "العودة إلى الصفحة الرئيسية",
-                invalidLink: "رابط المشاركة غير صالح",
-                linkExpired: "رابط المشاركة هذا غير صالح أو منتهي الصلاحية.",
-                view: "عرض",
-                createdOn: "أنشئ في",
-                expiresOn: "ينتهي في",
-                usedCount: "تم استخدامه",
-                of: "من",
-                unlimited: "غير محدود"
+                uploadFile: "رفع ملف جديد",
+                chooseFile: "اختر الملف",
+                fileName: "اسم الملف",
+                uploadButton: "رفع",
+                uploadImage: "رفع صورة جديدة",
+                chooseImage: "اختر الصورة",
+                imageName: "اسم الصورة",
+                footerText: "© 2023 موقع طلاب العلوم المالية والمصرفية. جميع الحقوق محفوظة."
             },
             en: {
                 siteTitle: "Finance and Banking Students",
                 home: "Home",
-                about: "About",
-                files: "Files",
-                gallery: "Gallery",
                 login: "Login",
-                dashboard: "Dashboard",
                 logout: "Logout",
-                welcome: "Welcome to Finance and Banking Students Platform",
-                welcomeText: "A specialized platform for exchanging knowledge and resources among finance and banking students",
-                aboutTitle: "About the Site",
-                aboutText: "This site is dedicated to finance and banking students, where they can share files and images related to their specialization. The site features a simple and easy-to-use interface with support for both Arabic and English languages and the ability to switch between dark and light modes.",
-                feature1Title: "File Upload",
-                feature1Text: "Ability to upload files in various formats with password protection.",
-                feature2Title: "Image Gallery",
-                feature2Text: "Sharing images related to finance and banking.",
-                feature3Title: "Multilingual Interface",
-                feature3Text: "Full support for Arabic and English languages.",
-                feature4Title: "Dark Browsing Mode",
-                feature4Text: "Comfortable browsing experience for the eyes at all times.",
-                availableFiles: "Available Files",
-                download: "Download",
-                galleryTitle: "Image Gallery",
-                footerText: "© 2023 Finance and Banking Students Website. All rights reserved.",
-                loginTitle: "Login",
+                loginTitle: "Login to Dashboard",
                 username: "Username",
                 password: "Password",
                 loginButton: "Login",
-                uploadFile: "Upload New File",
-                uploadImage: "Upload New Image",
-                chooseFile: "Choose File",
-                chooseImage: "Choose Image",
-                uploadButton: "Upload",
+                dashboard: "Dashboard",
                 welcomeUser: "Welcome, Abdullah",
-                fileName: "File Name",
-                imageName: "Image Name",
-                delete: "Delete",
                 createLink: "Create Share Link",
                 expiryDays: "Expiry Days",
-                maxViews: "Maximum Views (0 = unlimited)",
+                maxViews: "Maximum Views",
                 createLinkBtn: "Create Link",
                 copyLink: "Copy Link",
-                activeLinks: "Active Share Links",
-                noActiveLinks: "No active share links",
-                sharedContent: "Content Shared With You",
-                availableContent: "Available content for download",
-                noContent: "No content available at the moment",
-                goHome: "Back to Homepage",
-                invalidLink: "Invalid Share Link",
-                linkExpired: "This share link is invalid or has expired.",
-                view: "View",
-                createdOn: "Created on",
-                expiresOn: "Expires on",
-                usedCount: "Used",
-                of: "of",
-                unlimited: "unlimited"
+                uploadFile: "Upload New File",
+                chooseFile: "Choose File",
+                fileName: "File Name",
+                uploadButton: "Upload",
+                uploadImage: "Upload New Image",
+                chooseImage: "Choose Image",
+                imageName: "Image Name",
+                footerText: "© 2023 Finance and Banking Students Website. All rights reserved."
             }
         };
 
@@ -744,11 +605,9 @@
             if (lang === 'ar') {
                 document.documentElement.dir = 'rtl';
                 document.documentElement.lang = 'ar';
-                document.querySelector('header .container').style.direction = 'rtl';
             } else {
                 document.documentElement.dir = 'ltr';
                 document.documentElement.lang = 'en';
-                document.querySelector('header .container').style.direction = 'ltr';
             }
             
             // حفظ اللغة المفضلة
@@ -799,6 +658,11 @@
                 changeLanguage(e.target.value);
             });
             
+            // التحقق من حالة تسجيل الدخول عند تحميل الصفحة
+            if (localStorage.getItem('isLoggedIn') === 'true') {
+                showDashboard();
+            }
+            
             // معالجة تسجيل الدخول
             document.getElementById('loginForm').addEventListener('submit', function(e) {
                 e.preventDefault();
@@ -813,28 +677,76 @@
                     localStorage.setItem('isLoggedIn', 'true');
                     
                     // إخفاء نموذج تسجيل الدخول وإظهار لوحة التحكم
-                    document.getElementById('login').style.display = 'none';
-                    document.getElementById('dashboard').style.display = 'block';
+                    showDashboard();
                     
-                    // تغيير رابط تسجيل الدخول إلى لوحة التحكم
-                    document.getElementById('loginLink').textContent = lang === 'en' ? 'Dashboard' : 'لوحة التحكم';
-                    document.getElementById('loginLink').href = '#dashboard';
+                    // إظهار رسالة نجاح
+                    showMessage(lang === 'en' ? 'Login successful! Welcome to dashboard.' : 'تم تسجيل الدخول بنجاح! مرحباً بك في لوحة التحكم.', 'success');
                 } else {
-                    alert(lang === 'en' 
-                        ? 'Username or password is incorrect' 
-                        : 'اسم المستخدم أو كلمة المرور غير صحيحة');
+                    // إظهار رسالة خطأ
+                    showMessage(lang === 'en' ? 'Username or password is incorrect' : 'اسم المستخدم أو كلمة المرور غير صحيحة', 'error');
                 }
             });
             
-            // التحقق من حالة تسجيل الدخول عند تحميل الصفحة
-            if (localStorage.getItem('isLoggedIn') === 'true') {
+            // تسجيل الخروج
+            document.getElementById('logoutLink').addEventListener('click', function(e) {
+                e.preventDefault();
                 const lang = localStorage.getItem('language') || 'ar';
-                document.getElementById('login').style.display = 'none';
-                document.getElementById('dashboard').style.display = 'block';
-                document.getElementById('loginLink').textContent = lang === 'en' ? 'Dashboard' : 'لوحة التحكم';
-                document.getElementById('loginLink').href = '#dashboard';
-            }
+                
+                // حذف حالة تسجيل الدخول
+                localStorage.removeItem('isLoggedIn');
+                
+                // إخفاء لوحة التحكم وإظهار نموذج تسجيل الدخول
+                document.getElementById('loginSection').style.display = 'flex';
+                document.getElementById('dashboardSection').style.display = 'none';
+                document.getElementById('logoutLink').style.display = 'none';
+                
+                // إظهار رسالة
+                showMessage(lang === 'en' ? 'You have been logged out successfully.' : 'تم تسجيل الخروج بنجاح.', 'success');
+            });
+            
+            // نسخ رابط المشاركة
+            document.getElementById('copyLinkBtn').addEventListener('click', function() {
+                const shareLinkInput = document.getElementById('shareLink');
+                const lang = localStorage.getItem('language') || 'ar';
+                
+                shareLinkInput.select();
+                
+                // استخدام Clipboard API الحديث إذا كان متاحاً
+                if (navigator.clipboard && window.isSecureContext) {
+                    navigator.clipboard.writeText(shareLinkInput.value)
+                        .then(() => {
+                            showMessage(lang === 'en' ? 'Link copied to clipboard' : 'تم نسخ الرابط إلى الحافظة', 'success');
+                        })
+                        .catch(err => {
+                            // Fallback إلى الطريقة القديمة
+                            document.execCommand('copy');
+                            showMessage(lang === 'en' ? 'Link copied to clipboard' : 'تم نسخ الرابط إلى الحافظة', 'success');
+                        });
+                } else {
+                    // Fallback إلى الطريقة القديمة
+                    document.execCommand('copy');
+                    showMessage(lang === 'en' ? 'Link copied to clipboard' : 'تم نسخ الرابط إلى الحافظة', 'success');
+                }
+            });
         });
+
+        // دالة لإظهار لوحة التحكم
+        function showDashboard() {
+            document.getElementById('loginSection').style.display = 'none';
+            document.getElementById('dashboardSection').style.display = 'block';
+            document.getElementById('logoutLink').style.display = 'block';
+        }
+
+        // دالة لعرض الرسائل
+        function showMessage(message, type) {
+            const messageDiv = document.getElementById('loginMessage');
+            messageDiv.innerHTML = `<div class="alert alert-${type}">${message}</div>`;
+            
+            // إخفاء الرسالة بعد 3 ثواني
+            setTimeout(() => {
+                messageDiv.innerHTML = '';
+            }, 3000);
+        }
     </script>
 </body>
 </html>
